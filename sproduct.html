@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sproduct.css">
+    <title>Product Details</title>
+</head>
+
+<body>
+    <header>
+        <div class="top-bar">
+            <div class="container">
+                <div class="contact-info">
+                    <span>Email: janethauhar@gmail.com</span>
+                    <span>Phone: +91 9233841872</span>
+                </div>
+                
+            </div>
+        </div>
+        <div class="main-header">
+            <div class="container">
+                <h1>TOXIC<br>STORE</h1>
+                <div class="search-bar">
+               <input type="text" id="searchInput" placeholder="Search...">
+               <button type="button" id="searchButton">Search</button>
+            </div>
+                <nav>
+
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="CustomerSer.html">Contact</a></li>
+                        <li><a href="cart.html">cart</a></li>
+
+
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <div class="product-card">
+        <div class="product-detail">
+
+        <img id="productImage" src="1.jpg" alt="Product">
+        <h2 id="pname">Kamis</h2>
+        <p id="price">1500</p>
+        <p>Hei hi kamis ani</p>
+
+
+        <div class="selection">
+            <div class="select-box">
+                <label for="size">Size:</label>
+                <select id="size" name="size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+
+            <div class="select-box">
+                <label for="color">Color:</label>
+                <select id="color" name="color">
+                    <option value="white">White</option>
+                    <option value="blue">Blue</option>
+                    <option value="red">Red</option>
+                </select>
+            </div>
+        </div>
+
+        <button class="buy" id="order">Buy Now</button>
+        <button class="buy-button" id="buyButton">Add to cart</button>
+    </div>
+        
+    </div>
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <h1>Best E-commerce Store</h1>
+            </div>
+            <div class="footer-nav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="CustomerSer.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/your-facebook-profile" class="social-icon">Facebook</a>
+                <a href="https://twitter.com/your-twitter-profile" class="social-icon">Twitter</a>
+                <a href="https://www.instagram.com/your-instagram-profile" class="social-icon">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+    document.getElementById('color').addEventListener('change', function() {
+        var selectedColor = this.value;
+        var newImagePath;
+        if (selectedColor === 'white') {
+            newImagePath = '1.jpg'; // Set the image path for red color
+        } else if (selectedColor === 'blue') {
+            newImagePath = '1blue.jpg';
+        } else if (selectedColor === 'red') {
+
+            newImagePath = '1red.jpg';
+        }
+        document.getElementById('productImage').src = newImagePath;
+    });
+</script>
+<script>
+        // Get the button elements
+        const buyButton = document.getElementById('order');
+
+        // Add click event listeners to the buttons
+        buyButton.addEventListener('click', function() {
+            // Redirect to order.html when Buy Now button is clicked
+            window.location.href = 'order.php';
+        });
+    </script>
+    <script>
+         document.addEventListener("DOMContentLoaded", function() {
+    var searchButton = document.getElementById("searchButton");
+    var searchInput = document.getElementById("searchInput");
+
+    if (searchButton && searchInput) {
+        searchButton.addEventListener("click", function() {
+            var searchQuery = searchInput.value.toLowerCase();
+            if (searchQuery === "shirt") {
+                window.location.href = "shirt.html";
+            } else if (searchQuery === "pant") {
+                window.location.href = "pant.html";
+            } else if (searchQuery === "coat") {
+                window.location.href = "coat.html";
+            } else if (searchQuery === "hat") {
+                window.location.href = "hat.html";
+            } else {
+                alert("No results found for your search query: " + searchQuery);
+            }
+        });
+    } else {
+        console.error("Search button or input element not found.");
+    }
+});
+
+      </script>
+<script src="script.js"></script>
+</body>
+
+</html>
